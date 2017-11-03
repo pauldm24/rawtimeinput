@@ -1,0 +1,11 @@
+/.idea
+
+.sass-cache
+
+/node_modules
+/dist
+/public
+/backup*
+.DS_Store
+
+*.log
