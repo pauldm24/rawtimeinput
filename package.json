@@ -2,9 +2,18 @@
   "name": "rawtimeinput",
   "version": "0.0.1",
   "description": "ReactJS raw time input",
-  "main": "index.js",
-  "repository": "git@github.com:pauldm24/rawtimeinput.git",
-  "author": "John Paul Del Mundo <jp@pauldm.com>",
+  "main": "build/index.js",
+  "directories": {
+    "src": "src/"
+  },
+  "author": {
+    "name": "John Paul Del Mundo",
+    "email": "jp@pauldm.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pauldm24/rawtimeinput.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^7.1.6",
@@ -50,6 +59,6 @@
   "scripts": {
     "build": "npm run clean && NODE_ENV=production webpack --config webpack.config-prod.js",
     "start": "NODE_ENV=development webpack-dev-server --config webpack.config-dev.js",
-    "clean": "rimraf ./public/*"
+    "clean": "rimraf ./build/*"
   }
 }

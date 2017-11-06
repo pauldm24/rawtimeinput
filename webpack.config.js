@@ -46,18 +46,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Raw time input',
-      template: path.join(__dirname, 'index.tmpl.html'),
-      inject: 'body',
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor'],
-    }),
     new ExtractTextPlugin({
       filename: 'css/[name].css',
       disable: process.env.NODE_ENV === 'development',
     }),
-    new webpack.NamedModulesPlugin(),
   ],
 }
