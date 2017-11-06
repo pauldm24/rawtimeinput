@@ -29,10 +29,13 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
-    "global": "^4.3.2",
+    "moment": "^2.19.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
+  },
+  "peerDependencies": {
+    "moment": "^2.19.1"
   },
   "prettier": {
     "printWidth": 120,
