@@ -7,13 +7,19 @@ class TimeInput extends Component {
   constructor(props) {
     super(props)
 
-    const value = props.value
-      ? props.second ? moment(props.value).format('HH:mm:ss') : moment(props.value).format('HH:mm')
-      : ''
+    let date = moment()
+    if (!moment(props.value).isValid()) {
+      const [hour, minute, second] = formatTime(props.value, props.second).split(':')
+      date = moment(date).set({ hour, minute, second })
+    } else {
+      date = props.value
+    }
+
+    const value = props.value ? (props.second ? moment(date).format('HH:mm:ss') : moment(date).format('HH:mm')) : ''
 
     this.state = {
       value,
-      date: props.value ? moment(props.value) : moment(),
+      date,
     }
 
     this.onChange = this.onChange.bind(this)
