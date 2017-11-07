@@ -28,9 +28,18 @@ class TimeInput extends Component {
   }
 
   onChange({ name, value }) {
+    const { forceValue: force } = this.props
     let blurLen = this.props.second ? 8 : 5
     const { date } = this.state
     let fVal = addColon(value, this.state.value, this.props.second)
+
+    // allow empty value
+    if (!force && fVal === '') {
+      this.setState({ value: fVal })
+      this.props.onChange({ value: fVal, name })
+      return
+    }
+
     this.setState({ value: fVal })
 
     const [hour, minute, second] = fVal.split(':')
@@ -44,7 +53,16 @@ class TimeInput extends Component {
 
   onBlur({ name, value }) {
     const { date } = this.state
+    const { forceValue: force } = this.props
+    // allow empty value
+    if (!force && value === '') {
+      this.setState({ value })
+      this.props.onChange({ value, name })
+      return
+    }
+
     let fVal = formatTime(value, this.props.second)
+
     this.setState({ value: fVal })
 
     const [hour, minute, second] = fVal.split(':')
@@ -95,9 +113,11 @@ TimeInput.propTypes = {
   onBlur: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   second: PropTypes.bool.isRequired,
+  forceValue: PropTypes.bool.isRequired,
 }
 
 TimeInput.defaultProps = {
   onChange: () => {},
   second: false,
+  forceValue: false,
 }

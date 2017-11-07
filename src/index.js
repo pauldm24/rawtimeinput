@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   onChange({ value, name }) {
-    console.log(value, name, moment(value).format('HH:mm:ss'))
+    console.log(value, name)
   }
 
   render() {
