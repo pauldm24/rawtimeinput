@@ -1,10 +1,12 @@
 /**
  * Filter and set time format
  * @param {string} newVal - The time to be format
+ * @param {boolean} second - Add second or not
  * @return {string} - Formatted time
  */
 export const formatTime = (newVal, second = false) => {
   let [hour, min, sec] = newVal.split(':')
+  hour = hour || '00'
   min = min || '00'
   sec = sec || '00'
 
@@ -13,13 +15,13 @@ export const formatTime = (newVal, second = false) => {
   const secLen = sec.length
 
   if (hourLen === 1 && hour !== 0) {
-    hour = `${0}hour`
+    hour = `0${hour}`
   } else if (hourLen === 2 && hour > 23) {
     hour = `23`
   }
 
   if (minLen === 1 && min !== 0) {
-    min = `${0}min`
+    min = `0${min}`
   } else if (minLen === 2 && min > 59) {
     min = `59`
   }
@@ -41,6 +43,7 @@ export const formatTime = (newVal, second = false) => {
  * Add colon to the input if needed
  * @param {string} newVal - The time input
  * @param {string} prevVal - The previous value
+ * @param {boolean} second - Add second or not
  * @return {string} - The time
  */
 export const addColon = (newVal, prevVal, second = false) => {
