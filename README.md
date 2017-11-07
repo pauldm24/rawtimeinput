@@ -14,20 +14,23 @@ yarn add rawtimeinput # npm install rawtimeinput --save
 
 ### Properties
 
-| Property     | Required | Description                                                      | Default |
-| ------------ |:--------:| ---------------------------------------------------------------- |:-------:|
-| value        | true     | initial value `string` (`00:00:00`) or instance of `moment`      | none    |
-| onChange     | true     | function to be called on change                                  | none    |
-| onBlur       | true     | function to be called on change                                  | none    |
-| name         | true     | the name of the input                                            | none    |
-| second       | true     | should second added on the input                                 | `false` |
-| forceValue   | true     | should force to return a value on empty `00:00:00`               | `false` |
+| Property   | Required | Description                                                 | Default |
+| ---------- | :------: | ----------------------------------------------------------- | :-----: |
+| value      | true     | initial value `string` (`00:00:00`) or instance of `moment` | none    |
+| onChange   | true     | function to be called on change                             | none    |
+| onBlur     | true     | function to be called on change                             | none    |
+| name       | true     | the name of the input                                       | none    |
+| second     | true     | should second added on the input                            | `false` |
+| forceValue | true     | should force to return a value on empty `00:00:00`          | `false` |
 
 ### Return Value
 
 > Return an object value
+
 > `name` and `value`
+
 > name is the same value pass from the props
+
 > value is an instance of moment, you can parse the value using moment e.g time using `moment(value).format('HH:mm:ss')`
 
 ### Example
