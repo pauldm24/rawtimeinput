@@ -33,6 +33,7 @@ yarn add rawtimeinput # npm install rawtimeinput --save
 
 > value is an instance of moment, you can parse the value using moment e.g time using `moment(value).format('HH:mm:ss')`
 
+
 ### Example
 ```javascript
     <TimeInput
