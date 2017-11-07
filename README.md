@@ -25,11 +25,11 @@ yarn add rawtimeinput # npm install rawtimeinput --save
 
 ### Return Value
 
-> Return an object value
+> Return an object, `name` and `value`
 
-> `name` and `value`
+> value can be empty string if `forceValue` is set to `false` and input is leave as blank.
 
-> name is the same value pass from the props
+> `name` is the same value passed from the props.
 
 > value is an instance of moment, you can parse the value using moment e.g time using `moment(value).format('HH:mm:ss')`
 
@@ -53,6 +53,7 @@ git clone git@github.com:pauldm24/rawtimeinput.git
 cd rawtimeinput
 yarn # npm install
 
+yarn start # npm start
 ```
 
 Browse @ [http://localhost:8181](http://localhost:8181 "Open")
