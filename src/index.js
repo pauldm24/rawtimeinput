@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import moment from 'moment'
 import TimeInput from './components'
 
 class App extends Component {

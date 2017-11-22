@@ -89,7 +89,7 @@ class TimeInput extends Component {
 
   render() {
     const { value } = this.state
-    const { name, second } = this.props
+    const { name, second, disabled } = this.props
 
     return (
       <input
@@ -100,6 +100,7 @@ class TimeInput extends Component {
         onBlur={({ target }) => this.onBlur(target)}
         maxLength={second ? 8 : 5}
         onKeyDown={this.onKeyDown}
+        disabled={disabled}
       />
     )
   }
@@ -114,10 +115,12 @@ TimeInput.propTypes = {
   name: PropTypes.string.isRequired,
   second: PropTypes.bool.isRequired,
   forceValue: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool.isRequired,
 }
 
 TimeInput.defaultProps = {
   onChange: () => {},
   second: false,
   forceValue: false,
+  disabled: false,
 }
