@@ -89,7 +89,7 @@ class TimeInput extends Component {
 
   render() {
     const { value } = this.state
-    const { name, second, disabled } = this.props
+    const { name, second, disabled, style } = this.props
 
     return (
       <input
@@ -101,6 +101,7 @@ class TimeInput extends Component {
         maxLength={second ? 8 : 5}
         onKeyDown={this.onKeyDown}
         disabled={disabled}
+        style={style}
       />
     )
   }
@@ -116,6 +117,7 @@ TimeInput.propTypes = {
   second: PropTypes.bool.isRequired,
   forceValue: PropTypes.bool.isRequired,
   disabled: PropTypes.bool.isRequired,
+  style: PropTypes.object,
 }
 
 TimeInput.defaultProps = {

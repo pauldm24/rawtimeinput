@@ -23,6 +23,7 @@ yarn add rawtimeinput # npm install rawtimeinput --save
 | second     | true     | should second added on the input                            | `false` |
 | forceValue | true     | should force to return a value on empty `00:00:00`          | `false` |
 | disabled   | true     | disabled                                                    | `false` |
+| style      | false    | custom inline style                                         | none    |
 
 ### Return Value
 
