@@ -1,6 +1,6 @@
 {
   "name": "rawtimeinput",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "ReactJS raw time input",
   "main": "build/index.js",
   "directories": {

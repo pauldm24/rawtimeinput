@@ -73,7 +73,12 @@ class TimeInput extends Component {
   }
 
   onKeyDown(e) {
-    if ((e.keyCode >= 48 && e.keyCode <= 57) || e.keyCode === 8 || e.keyCode === 9) {
+    if (
+      (e.keyCode >= 48 && e.keyCode <= 57) ||
+      e.keyCode === 8 ||
+      e.keyCode === 9 ||
+      (e.keyCode >= 96 && e.keyCode <= 105)
+    ) {
       return
     } else {
       e.preventDefault()
